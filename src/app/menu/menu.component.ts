@@ -4,19 +4,17 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(
-    private router: Router
-  ) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   changePage(path) {
     this.router.navigate(['/' + path]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   }
-
 }

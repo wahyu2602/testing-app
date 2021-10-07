@@ -1,0 +1,26 @@
+.main {
+  background: rgb(214, 214, 214);
+  min-height: 100vh;
+}
+
+nav {
+  box-sizing: border-box !important;
+}
+
+.border-box {
+  box-sizing: border-box !important;
+}
+
+.btn-orange {
+  background: var(--bs-orange);
+}
+
+.btn-download {
+  padding: 0 10px;
+}
+
+@media (max-width: 991.98px) {
+  .container-custom {
+    padding: 0 20px;
+  }
+}

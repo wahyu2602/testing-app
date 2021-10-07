@@ -1,46 +1,69 @@
-<div class="nav-bar">
-  <div class="links collaps">
-    <a class="link-item active" href="#">Customer Register</a>
-    <a class="link-item" href="#">Customer List</a>
-    <a class="link-item" href="#">Customer Setting</a>
-    <a class="link-item" href="#">Customer Register Import</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid d-flex justify-content-center">
+    <a
+      class="nav-link link-item active-custom px-4"
+      aria-current="page"
+      href="#"
+      >From Registration</a
+    >
   </div>
-</div>
+</nav>
 
-<div class="container">
-  <p class="title-page">Customer Biodata</p>
-  <div class="content-input row">
-    <div class="col">
-      <select class="form-input">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-      <input class="form-input" type="text" placeholder="Customer Name" />
-      <input class="form-input" type="text" placeholder="Pic" />
-      <input class="form-input" type="text" placeholder="City" />
-      <input class="form-input" type="text" placeholder="Remark" />
-      <input class="form-input" type="text" placeholder="NPWP" />
-      <input
-        class="form-input"
-        type="text"
-        placeholder="Customer Price Category"
-      />
+<div class="container mt-5">
+  <p class="title-page">Field Data</p>
+  <div class="row">
+    <div class="col col-lg-4">
+      <form action="" method="post">
+        <select
+          class="form-select mb-3"
+          aria-label="Default select example"
+          required
+          autofocus
+        >
+          <option selected>-- Pilih kategori antrian --</option>
+          <option value="1">Antiran Kasir</option>
+          <option value="2">Antrian Apotek</option>
+          <option value="3">Antrian Laboratorium</option>
+        </select>
+        <fieldset disabled="disabled">
+          <label for="antrian" class="form-label">Your queue number</label>
+          <input
+            class="form-control"
+            type="text"
+            value="AA001"
+            id="antrian"
+            required
+          />
+        </fieldset>
+        <input
+          class="form-control mt-3"
+          type="text"
+          placeholder="Your Name"
+          required
+          autocomplete="off"
+        />
+        <textarea
+          class="form-control mt-3"
+          name=""
+          id=""
+          placeholder="Address"
+          required
+          autocomplete="off"
+        ></textarea>
+        <input
+          class="form-control mt-3"
+          type="number"
+          placeholder="No. HandPhone"
+          required
+          autocomplete="off"
+        />
+        <button type="submit" class="btn-icon-plus mt-5">+</button>
+      </form>
     </div>
-    <div class="col">
-      <textarea class="form-input" placeholder="Address"></textarea>
-      <textarea class="form-input" placeholder="Address Ke 2"></textarea>
-      <input class="form-input" type="text" placeholder="Contact No" />
-      <input class="form-input" type="text" placeholder="Region" />
-      <input class="form-input" type="text" placeholder="Province" />
-      <div class="float-lable">
-        <label class="float-label-item" for="kuota">Kuota</label>
-        <input class="form-input" type="number" id="kuota" placeholder="0" />
+    <div class="col display-custom">
+      <div class="d-flex justify-content-center">
+        <img src="./assets/img/heart.png" alt="healty" width="400px" />
       </div>
-      <input class="form-input" type="text" placeholder="Prefered Expedition" />
     </div>
   </div>
-
-  <button class="btn-icon-plus">+</button>
 </div>
