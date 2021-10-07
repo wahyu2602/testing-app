@@ -1,0 +1,138 @@
+::ng-deep * {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  padding: 10px 20px;
+}
+
+.nav-bar {
+  width: 100%;
+  background: rgb(238, 238, 238);
+}
+
+.links {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.link-item {
+  position: relative;
+  color: rgb(102, 102, 102);
+  text-decoration: none;
+  padding: 15px 30px;
+}
+
+.link-item::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: rgb(95, 95, 252);
+  left: 0;
+  bottom: -2px;
+  transition: 1s;
+}
+
+.active {
+  border-bottom: 2px solid rgb(95, 95, 252);
+}
+
+.link-item:hover::after {
+  width: 100%;
+}
+
+.title-page {
+  font-size: 2rem;
+}
+
+.row {
+  display: flex;
+  justify-content: left;
+  align-items: top;
+  width: 100%;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid rgb(129, 129, 129);
+  background: white;
+}
+
+.form-input:focus {
+  outline-color: rgb(120, 120, 252);
+}
+
+.col {
+  width: 50%;
+  margin: 10px 0;
+  margin-right: 10px;
+}
+
+.float-lable {
+  position: relative;
+}
+
+.float-label-item {
+  position: absolute;
+  font-size: 0.7rem;
+  top: -5px;
+  padding: 0 3px;
+  z-index: 2;
+  margin-left: 5px;
+  background-color: white;
+  color: rgb(133, 133, 133);
+}
+
+.btn-icon-plus {
+  padding: 0 20px;
+  color: white;
+  background: rgb(87, 130, 209);
+  font-size: 2rem;
+  border-radius: 5px;
+  border: none;
+  margin-left: 10px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.btn-icon-plus:active {
+  transform: scale(0.95);
+}
+
+.toggle-nav > input {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav-bar {
+    position: relative;
+    z-index: 1;
+  }
+
+  .collaps {
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .link-item {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .col {
+    width: 100%;
+  }
+}
