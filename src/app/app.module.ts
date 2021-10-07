@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MaterialModule } from './tools/material.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { VisitorListComponent } from './visitor-list/visitor-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,16 +17,10 @@ import { VisitorListComponent } from './visitor-list/visitor-list.component';
     MenuComponent,
     InputVisitorDetailsComponent,
     RequestQueueNumberComponent,
-    VisitorListComponent
+    VisitorListComponent,
   ],
-  imports: [
-    BrowserModule,
-    MaterialModule,
-    AppRoutingModule
-  ],
-  providers: [
-    { provide: APP_BASE_HREF, useValue: '/' },
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, MaterialModule, AppRoutingModule, FormsModule],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -13,12 +13,22 @@
   <p class="title-page">Field Data</p>
   <div class="row">
     <div class="col col-lg-4">
-      <form action="" method="post">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <input
+          hidden
+          type="number"
+          required
+          [ngModel]="customer.id"
+          name="id"
+          value="{{ customer.id + 1 }}"
+        />
         <select
           class="form-select mb-3"
           aria-label="Default select example"
           required
           autofocus
+          [ngModel]="customer.kategori"
+          name="kategori"
         >
           <option selected>-- Pilih kategori antrian --</option>
           <option value="1">Antiran Kasir</option>
@@ -26,13 +36,15 @@
           <option value="3">Antrian Laboratorium</option>
         </select>
         <fieldset disabled="disabled">
-          <label for="antrian" class="form-label">Your queue number</label>
+          <label for="noantrian" class="form-label">Your queue number</label>
           <input
             class="form-control"
             type="text"
-            value="AA001"
-            id="antrian"
+            value="{{ customer.noantrian + 1 }}"
+            id="noantrian"
             required
+            [ngModel]="customer.noantrian"
+            name="noantiran"
           />
         </fieldset>
         <input
@@ -41,6 +53,17 @@
           placeholder="Your Name"
           required
           autocomplete="off"
+          [ngModel]="customer.nama"
+          name="nama"
+        />
+        <input
+          class="form-control mt-3"
+          type="text"
+          placeholder="Your Age"
+          required
+          autocomplete="off"
+          [ngModel]="customer.umur"
+          name="umur"
         />
         <textarea
           class="form-control mt-3"
@@ -49,6 +72,8 @@
           placeholder="Address"
           required
           autocomplete="off"
+          [ngModel]="customer.alamat"
+          name="alamat"
         ></textarea>
         <input
           class="form-control mt-3"
@@ -56,6 +81,8 @@
           placeholder="No. HandPhone"
           required
           autocomplete="off"
+          [ngModel]="customer.nohp"
+          name="nohp"
         />
         <button type="submit" class="btn-icon-plus mt-5">+</button>
       </form>
