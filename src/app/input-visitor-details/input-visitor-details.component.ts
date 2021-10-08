@@ -11,47 +11,32 @@ import { CustomerService } from '../services/customer.service';
 })
 export class InputVisitorDetailsComponent implements OnInit {
   id: number;
+  nomor: number;
   header: string;
-  customer: Customer = {
-    id: 0,
-    kategori: '',
-    noantrian: '',
-    nama: '',
-    umur: 0,
-    alamat: '',
-    nohp: '',
-  };
+  customers: Customer[];
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private customerService: CustomerService
+    private customerServices: CustomerService
   ) {}
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.header = this.id === 0 ? 'Add Customer' : 'Edit Customer';
-    if (this.id != 0) {
-      this.customer = this.customerService.onGetCustomer(this.id);
-    }
+    this.customers = this.customerServices.onGet();
   }
 
   onSubmit(form: NgForm) {
     let customer: Customer = {
       id: form.value.id,
       kategori: form.value.kategori,
-      noantrian: form.value.noantrian,
+      nomor: form.value.nomor,
       nama: form.value.nama,
       umur: form.value.umur,
       alamat: form.value.alamat,
       nohp: form.value.nohp,
     };
 
-    if (this.id === 0) {
-      this.customerService.onAdd(customer);
-    } else {
-      this.customerService.onUpdate(customer);
-    }
-    this.router.navigateByUrl('');
+    this.customerServices.onAdd(customer);
+    this.router.navigateByUrl('request-queue-number');
   }
 }

@@ -1,1 +1,32 @@
-<p>request-queue-number works!</p>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <div
+        *ngFor="let customer of customers; let i = index"
+        class="card text-white bg-primary mb-3"
+        style="max-width: 18rem"
+      >
+        <div class="card-header">Queue Number</div>
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ customer.nomor }}</h5>
+          <p class="card-text text-center">
+            {{ customer.nama }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <button
+        class="btn btn-primary"
+        (click)="changePage('input-visitor-details')"
+      >
+        Add
+      </button>
+      <button class="btn btn-primary" (click)="changePage('visitor-list')">
+        List
+      </button>
+    </div>
+  </div>
+</div>

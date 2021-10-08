@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Customer } from '../models/customer.model';
 
@@ -9,7 +10,10 @@ import { Customer } from '../models/customer.model';
 })
 export class VisitorListComponent implements OnInit {
   customers: Customer[];
-  constructor(private customerServices: CustomerService) {}
+  constructor(
+    private router: Router,
+    private customerServices: CustomerService
+  ) {}
 
   ngOnInit(): void {
     this.customers = this.customerServices.onGet();
@@ -17,5 +21,9 @@ export class VisitorListComponent implements OnInit {
 
   onDelete(id: Number) {
     this.customerServices.onDelete(id);
+  }
+
+  changePage(path) {
+    this.router.navigate(['/' + path]);
   }
 }

@@ -18,61 +18,65 @@
           hidden
           type="number"
           required
-          [ngModel]="customer.id"
+          ngModel
           name="id"
-          value="{{ customer.id + 1 }}"
+          value="{{ customers[customers.length - 1].id + 1 }}"
         />
         <select
           class="form-select mb-3"
           aria-label="Default select example"
           required
           autofocus
-          [ngModel]="customer.kategori"
+          ngModel
           name="kategori"
         >
           <option selected>-- Pilih kategori antrian --</option>
-          <option value="1">Antiran Kasir</option>
-          <option value="2">Antrian Apotek</option>
-          <option value="3">Antrian Laboratorium</option>
+          <option value="Antiran Kasir">Antiran Kasir</option>
+          <option value="Antrian Apotek">Antrian Apotek</option>
+          <option value="Antrian Laboratorium">Antrian Laboratorium</option>
         </select>
-        <fieldset disabled="disabled">
-          <label for="noantrian" class="form-label">Your queue number</label>
-          <input
-            class="form-control"
-            type="text"
-            value="{{ customer.noantrian + 1 }}"
-            id="noantrian"
-            required
-            [ngModel]="customer.noantrian"
-            name="noantiran"
-          />
-        </fieldset>
+        <label for="nomor" class="form-label">Your queue number</label>
+        <input
+          disabled
+          class="form-control"
+          type="number"
+          value="{{ customers[customers.length - 1].nomor + 1 }}"
+          placeholder="{{ customers[customers.length - 1].nomor + 1 }}"
+        />
+        <input
+          hidden
+          type="number"
+          value="{{ customers[customers.length - 1].nomor + 1 }}"
+          required
+          ngModel
+          name="nomor"
+          placeholder="{{ customers[customers.length - 1].nomor + 1 }}"
+        />
         <input
           class="form-control mt-3"
           type="text"
           placeholder="Your Name"
           required
           autocomplete="off"
-          [ngModel]="customer.nama"
+          ngModel
           name="nama"
         />
         <input
           class="form-control mt-3"
-          type="text"
+          type="number"
           placeholder="Your Age"
           required
           autocomplete="off"
-          [ngModel]="customer.umur"
+          ngModel
           name="umur"
         />
         <textarea
           class="form-control mt-3"
-          name=""
-          id=""
+          id="alamat"
           placeholder="Address"
           required
           autocomplete="off"
-          [ngModel]="customer.alamat"
+          ngModel
           name="alamat"
         ></textarea>
         <input
@@ -81,7 +85,7 @@
           placeholder="No. HandPhone"
           required
           autocomplete="off"
-          [ngModel]="customer.nohp"
+          ngModel
           name="nohp"
         />
         <button type="submit" class="btn-icon-plus mt-5">+</button>

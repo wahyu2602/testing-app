@@ -8,7 +8,7 @@ export class CustomerService {
   customers: Customer[] = [
     {
       id: 1,
-      noantrian: 'AA0001',
+      nomor: 1,
       kategori: 'Antrian Apotik',
       nama: 'wahyu',
       umur: 25,
@@ -39,6 +39,7 @@ export class CustomerService {
   onUpdate(customer: Customer) {
     let oldCustomer = this.customers.find((x) => x.id === customer.id);
     oldCustomer.kategori = customer.kategori;
+    oldCustomer.nomor = customer.nomor;
     oldCustomer.nama = customer.nama;
     oldCustomer.umur = customer.umur;
     oldCustomer.alamat = customer.alamat;

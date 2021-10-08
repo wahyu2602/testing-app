@@ -1,6 +1,6 @@
 export class Customer {
   public id: number;
-  public noantrian: string;
+  public nomor: number;
   public kategori: string;
   public nama: string;
   public umur: number;
