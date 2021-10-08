@@ -13,8 +13,5 @@ export class MenuComponent implements OnInit {
 
   changePage(path) {
     this.router.navigate(['/' + path]);
-    setTimeout(() => {
-      window.location.reload();
-    }, 500);
   }
 }
