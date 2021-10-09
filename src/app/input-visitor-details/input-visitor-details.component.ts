@@ -10,9 +10,6 @@ import { CustomerService } from '../services/customer.service';
   styleUrls: ['./input-visitor-details.component.css'],
 })
 export class InputVisitorDetailsComponent implements OnInit {
-  id: number;
-  nomor: number;
-  header: string;
   customers: Customer[];
 
   constructor(
@@ -28,15 +25,21 @@ export class InputVisitorDetailsComponent implements OnInit {
   onSubmit(form: NgForm) {
     let customer: Customer = {
       id: form.value.id,
-      kategori: form.value.kategori,
+      tanggal: form.value.tanggal,
       nomor: form.value.nomor,
       nama: form.value.nama,
       umur: form.value.umur,
       alamat: form.value.alamat,
-      nohp: form.value.nohp,
+      nohp: '+62' + form.value.nohp,
     };
 
     this.customerServices.onAdd(customer);
+    console.log(customer);
+
     this.router.navigateByUrl('request-queue-number');
+  }
+
+  changePage(path) {
+    this.router.navigate(['/' + path]);
   }
 }

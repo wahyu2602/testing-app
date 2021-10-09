@@ -8,12 +8,21 @@ export class CustomerService {
   customers: Customer[] = [
     {
       id: 1,
+      tanggal: '2021-10-08',
       nomor: 1,
-      kategori: 'Antrian Apotik',
-      nama: 'wahyu',
+      nama: 'Wahyu',
       umur: 25,
-      alamat: 'jl. ciracas',
-      nohp: '08123456789',
+      alamat: 'jl. Ciracas',
+      nohp: '+628123456789',
+    },
+    {
+      id: 2,
+      tanggal: '2021-10-08',
+      nomor: 2,
+      nama: 'Jhon',
+      umur: 21,
+      alamat: 'jl. Subur',
+      nohp: '+628123452246',
     },
   ];
   constructor() {}
@@ -38,7 +47,7 @@ export class CustomerService {
 
   onUpdate(customer: Customer) {
     let oldCustomer = this.customers.find((x) => x.id === customer.id);
-    oldCustomer.kategori = customer.kategori;
+    oldCustomer.tanggal = customer.tanggal;
     oldCustomer.nomor = customer.nomor;
     oldCustomer.nama = customer.nama;
     oldCustomer.umur = customer.umur;
